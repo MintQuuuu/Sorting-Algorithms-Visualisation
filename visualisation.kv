@@ -1,0 +1,38 @@
+<CustomButton@Button>
+    font_size: 32
+
+<VisualisationLayout>
+    id: visual
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint: [1, .7]
+            Graph:
+                id: graph
+                ymax: 100
+        BoxLayout:
+            size_hint: [1, .1]
+            TextInput:
+                id: time
+                font_size: 24
+                multiline: False
+                hint_text: 'Time between steps in sec'
+            TextInput:
+                id: how_much
+                font_size: 24
+                multiline: False
+                hint_text: 'Number of elements in list'
+        BoxLayout:
+            size_hint: [1, .2]
+            Button:
+                text: "BUBBLE SORT"
+                bold: True
+                on_press: visual.start_bubble(how_much.text, time.text)
+            Button:
+                text: "SELECTION SORT"
+                bold: True
+                on_press: visual.start_selection(how_much.text, time.text)
+            Button:
+                text: "QUICK SORT"
+                bold: True
+                on_press: visual.start_quick(how_much.text, time.text)
